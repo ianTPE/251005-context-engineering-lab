@@ -16,6 +16,8 @@ dist/
 
 # Experiment results
 experiment_results_*.json
+context_comparison_*.json
+live_experiment_*.json
 
 # MCP memory
 mcp_memory/
