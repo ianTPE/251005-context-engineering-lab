@@ -26,7 +26,68 @@ A minimal viable experiment to validate how different **context engineering** ap
    - Plus 2 concrete examples
    - Input → Output pairs
 
-## 🚀 Quick Start
+## 🆕 New: Context Visualization Tools
+
+**Visualize how your context evolves - like `git diff` for prompts!**
+
+Track context changes, compare strategies, and measure real impact with our new visualization toolkit:
+
+### ✨ Features
+
+- 📊 **Context Diff** - See exactly what changed between versions
+- 📈 **Evolution Timeline** - Track token usage and improvements
+- 🔄 **Side-by-Side Comparison** - Visual comparison of contexts
+- 🎯 **Response Quality Metrics** - Measure actual API performance
+- 💾 **Export Results** - JSON export for analysis
+
+### 🚀 Quick Demo
+
+```bash
+# Install visualization dependencies
+pip install rich tiktoken
+
+# Run demo (no API needed)
+python context_visualizer.py
+
+# Run live experiment (requires API key)
+python context_visualizer_live.py
+```
+
+### 📚 Documentation
+
+- 🎨 [5-Minute Quick Start](./QUICKSTART_VISUALIZATION.md) - Get started immediately
+- 📖 [Complete Usage Guide](./VISUALIZATION_GUIDE.md) - All features explained
+- 💡 [Concepts & Examples](./VISUALIZATION_SUMMARY.md) - Understanding context engineering
+
+### 🎯 What You'll See
+
+```
+📈 Context Evolution Timeline
+
+┌────────┬─────────────┬────────┬──────────┐
+│ Step   │ Name        │ Tokens │ Δ Tokens │
+├────────┼─────────────┼────────┼──────────┤
+│ #0     │ Baseline    │     13 │          │
+│ #1     │ + Rules     │     65 │      +52 │
+│ #2     │ + Examples  │    161 │      +96 │
+└────────┴─────────────┴────────┴──────────┘
+
+🎯 Response Comparison
+
+┌─────────────┬───────┬─────────────┐
+│ Context     │ Score │ Result      │
+├─────────────┼───────┼─────────────┤
+│ Baseline    │   0%  │ ❌ Failed   │
+│ + Rules     │ 100%  │ ✅ Perfect  │
+│ + Examples  │ 100%  │ ✅ Perfect  │
+└─────────────┴───────┴─────────────┘
+```
+
+**Real experiment results show Rules-based prompts achieve 100% accuracy vs 0% for baseline!**
+
+---
+
+## 🚀 Quick Start (Original Experiments)
 
 ### 1. Install Dependencies
 
@@ -149,21 +210,31 @@ temperature=0.3  # Range: 0.0 - 2.0
 
 Want to extend this experiment? Try:
 
-1. **Prompt Injection Testing**
+1. **🆕 Context Visualization** (Recommended!)
+   - Use `context_visualizer.py` to see context evolution
+   - Run `context_visualizer_live.py` for real API testing
+   - Compare your custom prompts visually
+   - See [QUICKSTART_VISUALIZATION.md](./QUICKSTART_VISUALIZATION.md)
+
+2. **Prompt Injection Testing**
    - Add adversarial test cases
    - Test context robustness
+   - Use visualization tools to debug failures
    
-2. **Context Slicing**
+3. **Context Slicing**
    - Use longer reviews (500+ words)
    - Test summarization before extraction
+   - Track token usage with visualization tools
    
-3. **Observability**
+4. **Observability**
    - Add Langfuse/PromptLayer integration
+   - Combine with context visualization for complete tracking
    - Track token usage and latency
    
-4. **LangGraph Version**
+5. **LangGraph Version**
    - Convert A/B/C into state graph nodes
    - Add multi-strategy comparison logic
+   - Visualize state transitions
 
 ## 📚 Learn More
 
