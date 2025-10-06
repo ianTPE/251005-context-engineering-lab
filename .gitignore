@@ -18,6 +18,8 @@ dist/
 experiment_results_*.json
 context_comparison_*.json
 live_experiment_*.json
+langgraph_experiment_*.json
+langgraph_structure.png
 
 # MCP memory
 mcp_memory/
