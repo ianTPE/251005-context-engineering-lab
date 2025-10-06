@@ -324,8 +324,10 @@ def run_experiment():
     }
     
     for result in all_results:
-        for ctx_name in avg_scores.keys():
-            avg_scores[ctx_name] += result["scores"].get(ctx_name, 0)
+        scores_dict = result["scores"]
+        avg_scores["Context A (Baseline)"] += scores_dict.get("Context A", 0)
+        avg_scores["Context B (Rules-based)"] += scores_dict.get("Context B", 0)
+        avg_scores["Context C (Few-shot)"] += scores_dict.get("Context C", 0)
     
     for ctx_name in avg_scores.keys():
         avg_scores[ctx_name] /= len(all_results)
