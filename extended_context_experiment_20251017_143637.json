@@ -1,0 +1,623 @@
+{
+  "timestamp": "20251017_143637",
+  "experiment_type": "Extended Context Engineering with CoT, ReAct",
+  "results": {
+    "Rules-based": {
+      "strategy": "Rules-based",
+      "total_score": 7,
+      "success_rate": 1.0,
+      "total_tokens": 840,
+      "results": [
+        {
+          "test_id": 1,
+          "input": "這支耳機音質不錯，但藍牙常常斷線。",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"headphones\",\"issue\":\"bluetooth frequently disconnects\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "headphones",
+            "issue": "bluetooth frequently disconnects"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 2,
+          "input": "The keyboard feels great, but the battery dies too fast.",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"keyboard\",\"issue\":\"battery dies too fast\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "keyboard",
+            "issue": "battery dies too fast"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 3,
+          "input": "相機畫質很棒，可是夜拍對焦很慢。",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"camera\",\"issue\":\"slow autofocus in night shots\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "camera",
+            "issue": "slow autofocus in night shots"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 4,
+          "input": "我最近買了這款無線耳機，整體來說音質表現相當出色，低音渾厚、高音清晰。不過使用了兩個禮拜後發現，藍牙連線經常會突然斷掉，尤其是在人多的地方更明顯，需要重新配對才能使用，這點真的很困擾。",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"wireless headphones\",\"issue\":\"bluetooth connection frequently drops, especially in crowded places, requires re-pairing\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "wireless headphones",
+            "issue": "bluetooth connection frequently drops, especially in crowded places, requires re-pairing"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 5,
+          "input": "The mechanical keyboard I purchased has excellent build quality with a satisfying tactile feedback that makes typing a pleasure. However, I'm quite disappointed with the battery life - it only lasts about 3-4 days with the RGB lighting on, which is far shorter than the advertised 2 weeks. I find myself charging it constantly.",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"mechanical keyboard\",\"issue\":\"battery life is far shorter than advertised; lasts 3-4 days with rgb lighting on and requires frequent charging\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "mechanical keyboard",
+            "issue": "battery life is far shorter than advertised; lasts 3-4 days with rgb lighting on and requires frequent charging"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 6,
+          "input": "這台相機的畫質真的沒話說，日拍的照片色彩鮮豔、細節豐富，完全達到專業水準。但是一到晚上或光線不足的環境，對焦速度就變得超級慢，常常要對好幾次才能成功，拍夜景或室內照片時很不方便，希望未來韌體更新能改善這個問題。",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"camera\",\"issue\":\"slow autofocus in low light requiring multiple attempts\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "camera",
+            "issue": "slow autofocus in low light requiring multiple attempts"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 7,
+          "input": "這款智慧手錶的螢幕顯示效果很棒，在陽光下也能清楚看見，而且運動追蹤功能很準確。可是續航力真的讓人失望，官方說可以用5天，但實際上開啟所有功能後，大概2天就要充電了。另外充電速度也很慢，要充滿電需要將近3小時，對於經常外出的人來說很不方便。",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"smartwatch\",\"issue\":\"battery life much shorter than advertised and slow charging taking nearly 3 hours to fully charge\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "smartwatch",
+            "issue": "battery life much shorter than advertised and slow charging taking nearly 3 hours to fully charge"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        }
+      ]
+    },
+    "Few-shot": {
+      "strategy": "Few-shot",
+      "total_score": 7,
+      "success_rate": 1.0,
+      "total_tokens": 1750,
+      "results": [
+        {
+          "test_id": 1,
+          "input": "這支耳機音質不錯，但藍牙常常斷線。",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"headphones\",\"issue\":\"bluetooth frequently disconnects\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "headphones",
+            "issue": "bluetooth frequently disconnects"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 250
+        },
+        {
+          "test_id": 2,
+          "input": "The keyboard feels great, but the battery dies too fast.",
+          "output": "{\"sentiment\": \"negative\", \"product\": \"keyboard\", \"issue\": \"battery drains quickly\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "keyboard",
+            "issue": "battery drains quickly"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 250
+        },
+        {
+          "test_id": 3,
+          "input": "相機畫質很棒，可是夜拍對焦很慢。",
+          "output": "{\"sentiment\": \"negative\", \"product\": \"camera\", \"issue\": \"slow autofocus in low light\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "camera",
+            "issue": "slow autofocus in low light"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 250
+        },
+        {
+          "test_id": 4,
+          "input": "我最近買了這款無線耳機，整體來說音質表現相當出色，低音渾厚、高音清晰。不過使用了兩個禮拜後發現，藍牙連線經常會突然斷掉，尤其是在人多的地方更明顯，需要重新配對才能使用，這點真的很困擾。",
+          "output": "{\"sentiment\": \"negative\", \"product\": \"wireless headphones\", \"issue\": \"frequent Bluetooth disconnections requiring re-pairing, worse in crowded areas\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "wireless headphones",
+            "issue": "frequent Bluetooth disconnections requiring re-pairing, worse in crowded areas"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 250
+        },
+        {
+          "test_id": 5,
+          "input": "The mechanical keyboard I purchased has excellent build quality with a satisfying tactile feedback that makes typing a pleasure. However, I'm quite disappointed with the battery life - it only lasts about 3-4 days with the RGB lighting on, which is far shorter than the advertised 2 weeks. I find myself charging it constantly.",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"keyboard\",\"issue\":\"short battery life (3-4 days vs 2 weeks advertised), requires frequent charging\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "keyboard",
+            "issue": "short battery life (3-4 days vs 2 weeks advertised), requires frequent charging"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 250
+        },
+        {
+          "test_id": 6,
+          "input": "這台相機的畫質真的沒話說，日拍的照片色彩鮮豔、細節豐富，完全達到專業水準。但是一到晚上或光線不足的環境，對焦速度就變得超級慢，常常要對好幾次才能成功，拍夜景或室內照片時很不方便，希望未來韌體更新能改善這個問題。",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"camera\",\"issue\":\"slow autofocus in low light\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "camera",
+            "issue": "slow autofocus in low light"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 250
+        },
+        {
+          "test_id": 7,
+          "input": "這款智慧手錶的螢幕顯示效果很棒，在陽光下也能清楚看見，而且運動追蹤功能很準確。可是續航力真的讓人失望，官方說可以用5天，但實際上開啟所有功能後，大概2天就要充電了。另外充電速度也很慢，要充滿電需要將近3小時，對於經常外出的人來說很不方便。",
+          "output": "{\"sentiment\":\"negative\",\"product\":\"smartwatch\",\"issue\":\"short battery life and slow charging\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "smartwatch",
+            "issue": "short battery life and slow charging"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 250
+        }
+      ]
+    },
+    "CoT (Chain-of-Thought)": {
+      "strategy": "CoT (Chain-of-Thought)",
+      "total_score": 0,
+      "success_rate": 0.0,
+      "total_tokens": 1400,
+      "results": [
+        {
+          "test_id": 1,
+          "input": "這支耳機音質不錯，但藍牙常常斷線。",
+          "output": "{\n  \"sentiment\": \"mixed\",\n  \"product\": \"Bluetooth headphones\",\n  \"issue\": \"Bluetooth connection frequently drops\"\n}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "Bluetooth headphones",
+            "issue": "Bluetooth connection frequently drops"
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 2,
+          "input": "The keyboard feels great, but the battery dies too fast.",
+          "output": "{\n  \"sentiment\": \"mixed\",\n  \"product\": \"wireless keyboard\",\n  \"issue\": \"battery dies too fast\"\n}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "wireless keyboard",
+            "issue": "battery dies too fast"
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 3,
+          "input": "相機畫質很棒，可是夜拍對焦很慢。",
+          "output": "{\n  \"sentiment\": \"mixed\",\n  \"product\": \"camera\",\n  \"issue\": \"autofocus is very slow during night/low-light shooting\"\n}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "camera",
+            "issue": "autofocus is very slow during night/low-light shooting"
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 4,
+          "input": "我最近買了這款無線耳機，整體來說音質表現相當出色，低音渾厚、高音清晰。不過使用了兩個禮拜後發現，藍牙連線經常會突然斷掉，尤其是在人多的地方更明顯，需要重新配對才能使用，這點真的很困擾。",
+          "output": "{\"sentiment\":\"mixed\",\"product\":\"無線耳機\",\"issue\":\"藍牙連線經常斷線，特別在人多的地方，需要重新配對才能使用\"}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "無線耳機",
+            "issue": "藍牙連線經常斷線，特別在人多的地方，需要重新配對才能使用"
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 5,
+          "input": "The mechanical keyboard I purchased has excellent build quality with a satisfying tactile feedback that makes typing a pleasure. However, I'm quite disappointed with the battery life - it only lasts about 3-4 days with the RGB lighting on, which is far shorter than the advertised 2 weeks. I find myself charging it constantly.",
+          "output": "{\n  \"sentiment\": \"mixed\",\n  \"product\": \"mechanical keyboard\",\n  \"issue\": \"Battery life is much shorter than advertised (3-4 days with RGB on vs advertised 2 weeks), requiring frequent charging.\"\n}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "mechanical keyboard",
+            "issue": "Battery life is much shorter than advertised (3-4 days with RGB on vs advertised 2 weeks), requiring frequent charging."
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 6,
+          "input": "這台相機的畫質真的沒話說，日拍的照片色彩鮮豔、細節豐富，完全達到專業水準。但是一到晚上或光線不足的環境，對焦速度就變得超級慢，常常要對好幾次才能成功，拍夜景或室內照片時很不方便，希望未來韌體更新能改善這個問題。",
+          "output": "{\n  \"sentiment\": \"mixed\",\n  \"product\": \"camera\",\n  \"issue\": \"Autofocus becomes very slow in low-light/night conditions, requiring multiple attempts to focus; hopes for a firmware update to improve this.\"\n}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "camera",
+            "issue": "Autofocus becomes very slow in low-light/night conditions, requiring multiple attempts to focus; hopes for a firmware update to improve this."
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 7,
+          "input": "這款智慧手錶的螢幕顯示效果很棒，在陽光下也能清楚看見，而且運動追蹤功能很準確。可是續航力真的讓人失望，官方說可以用5天，但實際上開啟所有功能後，大概2天就要充電了。另外充電速度也很慢，要充滿電需要將近3小時，對於經常外出的人來說很不方便。",
+          "output": "{\n  \"sentiment\": \"mixed\",\n  \"product\": \"smartwatch\",\n  \"issue\": \"Battery life is much shorter than advertised (about 2 days with all features on vs 5 days claimed); charging is very slow (nearly 3 hours to full).\"\n}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "smartwatch",
+            "issue": "Battery life is much shorter than advertised (about 2 days with all features on vs 5 days claimed); charging is very slow (nearly 3 hours to full)."
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        }
+      ]
+    },
+    "ReAct (Reasoning + Acting)": {
+      "strategy": "ReAct (Reasoning + Acting)",
+      "total_score": 0,
+      "success_rate": 0.0,
+      "total_tokens": 1400,
+      "results": [
+        {
+          "test_id": 1,
+          "input": "這支耳機音質不錯，但藍牙常常斷線。",
+          "output": "{\"sentiment\":\"mixed\",\"product\":\"Bluetooth earphones\",\"issue\":\"Bluetooth frequently disconnects\"}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "Bluetooth earphones",
+            "issue": "Bluetooth frequently disconnects"
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 2,
+          "input": "The keyboard feels great, but the battery dies too fast.",
+          "output": "I can’t share step-by-step reasoning, but here’s the result:\n\n{\n  \"product\": \"keyboard\",\n  \"sentiment\": \"mixed\",\n  \"issue\": \"battery dies too fast (poor battery life)\"\n}",
+          "parsed": {
+            "product": "keyboard",
+            "sentiment": "mixed",
+            "issue": "battery dies too fast (poor battery life)"
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 3,
+          "input": "相機畫質很棒，可是夜拍對焦很慢。",
+          "output": "Thought 1: I need to analyze this review systematically. Let me start by identifying the product type.\nAction 1: Examine the review for product-related keywords and context clues.\nObservation 1: The text mentions “相機” and camera-specific terms like “畫質” and “對焦,” indicating the product is a camera (or camera module).\n\nThought 2: Now I should determine the overall sentiment by weighing positive vs negative expressions.\nAction 2: Identify sentiment-bearing words and phrases, then evaluate the overall tone.\nObservation 2: Positive: “畫質很棒” (image quality is great). Contrastive cue: “可是” (but). Negative: “夜拍對焦很慢” (autofocus is very slow at night). Overall sentiment is mixed (positive with a notable complaint).\n\nThought 3: Finally, I need to extract any specific issues or problems mentioned.\nAction 3: Look for complaint words, problem descriptions, or negative experiences described.\nObservation 3: Specific issue: slow autofocus during night/low-light shooting (“夜拍對焦很慢”).\n\nThought 4: Based on my systematic analysis, I can now provide the structured output.\nFinal Answer: {\"sentiment\":\"mixed\",\"product\":\"相機\",\"issue\":\"夜拍對焦很慢（低光環境自動對焦速度慢）\"}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "相機",
+            "issue": "夜拍對焦很慢（低光環境自動對焦速度慢）"
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 4,
+          "input": "我最近買了這款無線耳機，整體來說音質表現相當出色，低音渾厚、高音清晰。不過使用了兩個禮拜後發現，藍牙連線經常會突然斷掉，尤其是在人多的地方更明顯，需要重新配對才能使用，這點真的很困擾。",
+          "output": "I can’t share step-by-step ReAct reasoning, but here’s a concise result:\n\n{\n  \"sentiment\": \"mixed\",\n  \"product\": \"無線耳機\",\n  \"issue\": \"藍牙連線不穩定，經常斷線，尤其在人多的地方更明顯，需重新配對\"\n}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "無線耳機",
+            "issue": "藍牙連線不穩定，經常斷線，尤其在人多的地方更明顯，需重新配對"
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 5,
+          "input": "The mechanical keyboard I purchased has excellent build quality with a satisfying tactile feedback that makes typing a pleasure. However, I'm quite disappointed with the battery life - it only lasts about 3-4 days with the RGB lighting on, which is far shorter than the advertised 2 weeks. I find myself charging it constantly.",
+          "output": "I’m sorry, but I can’t share my step-by-step internal reasoning. Here is the extracted information:\n\n{\n  \"sentiment\": \"mixed\",\n  \"product\": \"mechanical keyboard\",\n  \"issue\": \"Battery life significantly shorter than advertised—only 3–4 days with RGB on versus the advertised 2 weeks; requires frequent charging.\"\n}",
+          "parsed": {
+            "sentiment": "mixed",
+            "product": "mechanical keyboard",
+            "issue": "Battery life significantly shorter than advertised—only 3–4 days with RGB on versus the advertised 2 weeks; requires frequent charging."
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 6,
+          "input": "這台相機的畫質真的沒話說，日拍的照片色彩鮮豔、細節豐富，完全達到專業水準。但是一到晚上或光線不足的環境，對焦速度就變得超級慢，常常要對好幾次才能成功，拍夜景或室內照片時很不方便，希望未來韌體更新能改善這個問題。",
+          "output": "Thought 1: I need to analyze this review systematically. Let me start by identifying the product type.\nAction 1: Examine the review for product-related keywords and context clues.\nObservation 1: Mentions “相機” (camera). Product identified as a camera.\n\nThought 2: Now I should determine the overall sentiment by weighing positive vs negative expressions.\nAction 2: Identify sentiment-bearing words and phrases, then evaluate the overall tone.\nObservation 2: Positive: “畫質真的沒話說”, “色彩鮮豔、細節豐富”, “完全達到專業水準”. Negative: “對焦速度超級慢”, “常常要對好幾次才能成功”, “很不方便”. Overall sentiment: mixed (strong praise for image quality, clear complaint about low-light autofocus).\n\nThought 3: Finally, I need to extract any specific issues or problems mentioned.\nAction 3: Look for complaint words, problem descriptions, or negative experiences described.\nObservation 3: Issue: In low-light/night conditions, autofocus becomes very slow and requires multiple attempts; inconvenient for night/indoor shots. User hopes a future firmware update will fix it.\n\nThought 4: Based on my systematic analysis, I can now provide the structured output.\n\nFinal Answer: {\n  \"product\": \"camera\",\n  \"sentiment\": \"mixed\",\n  \"issue\": \"Autofocus is very slow in low-light/night conditions, often requiring multiple attempts; inconvenient for night or indoor photography; user hopes for a firmware update to improve this.\"\n}",
+          "parsed": {
+            "product": "camera",
+            "sentiment": "mixed",
+            "issue": "Autofocus is very slow in low-light/night conditions, often requiring multiple attempts; inconvenient for night or indoor photography; user hopes for a firmware update to improve this."
+          },
+          "score": 0,
+          "error": "invalid_sentiment: mixed",
+          "estimated_tokens": 200
+        },
+        {
+          "test_id": 7,
+          "input": "這款智慧手錶的螢幕顯示效果很棒，在陽光下也能清楚看見，而且運動追蹤功能很準確。可是續航力真的讓人失望，官方說可以用5天，但實際上開啟所有功能後，大概2天就要充電了。另外充電速度也很慢，要充滿電需要將近3小時，對於經常外出的人來說很不方便。",
+          "output": "Sorry, I can’t share my step-by-step reasoning, but here’s the concise result.\n\n{\n  \"product\": \"智慧手錶\",\n  \"sentiment\": \"褒貶不一：螢幕顯示與運動追蹤表現正面，但對電池續航與充電速度不滿\",\n  \"issues\": [\n    \"續航力短，與官方宣稱5天不符（實際約2天需充電）\",\n    \"充電速度慢（約3小時才充滿）\",\n    \"對經常外出者使用不便\"\n  ]\n}",
+          "parsed": {
+            "product": "智慧手錶",
+            "sentiment": "褒貶不一：螢幕顯示與運動追蹤表現正面，但對電池續航與充電速度不滿",
+            "issues": [
+              "續航力短，與官方宣稱5天不符（實際約2天需充電）",
+              "充電速度慢（約3小時才充滿）",
+              "對經常外出者使用不便"
+            ]
+          },
+          "score": 0,
+          "error": "wrong_keys: {'issues', 'sentiment', 'product'}, invalid_sentiment: 褒貶不一：螢幕顯示與運動追蹤表現正面，但對電池續航與充電速度不滿, missing_or_invalid_issue",
+          "estimated_tokens": 200
+        }
+      ]
+    },
+    "Smart Selection": {
+      "strategy": "Smart Selection",
+      "total_score": 7,
+      "success_rate": 1.0,
+      "total_tokens": 970,
+      "strategy_counts": {
+        "rules_based": 6,
+        "few_shot": 1,
+        "cot": 0,
+        "react": 0
+      },
+      "results": [
+        {
+          "test_id": 1,
+          "input": "這支耳機音質不錯，但藍牙常常斷線。",
+          "prediction": {
+            "strategy": "rules_based",
+            "reason": "低複雜度 0.13 < 0.5",
+            "confidence": 0.6,
+            "complexity_score": 0.12608333333333333,
+            "features": {
+              "length": 0.085,
+              "ambiguity": 0.3333333333333333,
+              "mixed_language": 0.0,
+              "technical_terms": 0.2,
+              "sentiment_clarity": 0.0,
+              "reasoning_complexity": 0.0
+            },
+            "detected_patterns": []
+          },
+          "output": "{\"sentiment\":\"negative\",\"product\":\"headphones\",\"issue\":\"bluetooth frequently disconnects\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "headphones",
+            "issue": "bluetooth frequently disconnects"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 2,
+          "input": "The keyboard feels great, but the battery dies too fast.",
+          "prediction": {
+            "strategy": "rules_based",
+            "reason": "低複雜度 0.15 < 0.5",
+            "confidence": 0.6,
+            "complexity_score": 0.147,
+            "features": {
+              "length": 0.28,
+              "ambiguity": 0.0,
+              "mixed_language": 0.0,
+              "technical_terms": 0.2,
+              "sentiment_clarity": 0.5,
+              "reasoning_complexity": 0.0
+            },
+            "detected_patterns": []
+          },
+          "output": "{\"sentiment\":\"negative\",\"product\":\"keyboard\",\"issue\":\"battery dies too fast\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "keyboard",
+            "issue": "battery dies too fast"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 3,
+          "input": "相機畫質很棒，可是夜拍對焦很慢。",
+          "prediction": {
+            "strategy": "rules_based",
+            "reason": "低複雜度 0.09 < 0.5",
+            "confidence": 0.6,
+            "complexity_score": 0.087,
+            "features": {
+              "length": 0.08,
+              "ambiguity": 0.0,
+              "mixed_language": 0.0,
+              "technical_terms": 0.0,
+              "sentiment_clarity": 0.5,
+              "reasoning_complexity": 0.0
+            },
+            "detected_patterns": []
+          },
+          "output": "{\"sentiment\":\"negative\",\"product\":\"camera\",\"issue\":\"slow autofocus in night shots\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "camera",
+            "issue": "slow autofocus in night shots"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 4,
+          "input": "我最近買了這款無線耳機，整體來說音質表現相當出色，低音渾厚、高音清晰。不過使用了兩個禮拜後發現，藍牙連線經常會突然斷掉，尤其是在人多的地方更明顯，需要重新配對才能使用，這點真的很困擾。",
+          "prediction": {
+            "strategy": "few_shot",
+            "reason": "檢測到few_shot模式: 整體.*(?:不過|但是|可是)",
+            "confidence": 0.85,
+            "complexity_score": 0.14400000000000002,
+            "features": {
+              "length": 0.46,
+              "ambiguity": 0.0,
+              "mixed_language": 0.0,
+              "technical_terms": 0.0,
+              "sentiment_clarity": 0.5,
+              "reasoning_complexity": 0.0
+            },
+            "detected_patterns": [
+              "整體.*(?:不過|但是|可是)"
+            ]
+          },
+          "output": "{\"sentiment\":\"negative\",\"product\":\"wireless headphones\",\"issue\":\"frequent Bluetooth disconnects requiring re-pairing, worse in crowded areas\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "wireless headphones",
+            "issue": "frequent Bluetooth disconnects requiring re-pairing, worse in crowded areas"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 250
+        },
+        {
+          "test_id": 5,
+          "input": "The mechanical keyboard I purchased has excellent build quality with a satisfying tactile feedback that makes typing a pleasure. However, I'm quite disappointed with the battery life - it only lasts about 3-4 days with the RGB lighting on, which is far shorter than the advertised 2 weeks. I find myself charging it constantly.",
+          "prediction": {
+            "strategy": "rules_based",
+            "reason": "低複雜度 0.18 < 0.5",
+            "confidence": 0.6,
+            "complexity_score": 0.18,
+            "features": {
+              "length": 1.0,
+              "ambiguity": 0.0,
+              "mixed_language": 0.0,
+              "technical_terms": 0.2,
+              "sentiment_clarity": 0.0,
+              "reasoning_complexity": 0.0
+            },
+            "detected_patterns": []
+          },
+          "output": "{\n  \"sentiment\": \"negative\",\n  \"product\": \"mechanical keyboard\",\n  \"issue\": \"battery life much shorter than advertised (3-4 days with rgb lighting vs 2 weeks), requires frequent charging\"\n}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "mechanical keyboard",
+            "issue": "battery life much shorter than advertised (3-4 days with rgb lighting vs 2 weeks), requires frequent charging"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 6,
+          "input": "這台相機的畫質真的沒話說，日拍的照片色彩鮮豔、細節豐富，完全達到專業水準。但是一到晚上或光線不足的環境，對焦速度就變得超級慢，常常要對好幾次才能成功，拍夜景或室內照片時很不方便，希望未來韌體更新能改善這個問題。",
+          "prediction": {
+            "strategy": "rules_based",
+            "reason": "低複雜度 0.18 < 0.5",
+            "confidence": 0.6,
+            "complexity_score": 0.18375,
+            "features": {
+              "length": 0.525,
+              "ambiguity": 0.0,
+              "mixed_language": 0.0,
+              "technical_terms": 0.2,
+              "sentiment_clarity": 0.5,
+              "reasoning_complexity": 0.0
+            },
+            "detected_patterns": []
+          },
+          "output": "{\n  \"sentiment\": \"negative\",\n  \"product\": \"camera\",\n  \"issue\": \"slow autofocus in low light\"\n}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "camera",
+            "issue": "slow autofocus in low light"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        },
+        {
+          "test_id": 7,
+          "input": "這款智慧手錶的螢幕顯示效果很棒，在陽光下也能清楚看見，而且運動追蹤功能很準確。可是續航力真的讓人失望，官方說可以用5天，但實際上開啟所有功能後，大概2天就要充電了。另外充電速度也很慢，要充滿電需要將近3小時，對於經常外出的人來說很不方便。",
+          "prediction": {
+            "strategy": "rules_based",
+            "reason": "低複雜度 0.19 < 0.5",
+            "confidence": 0.6,
+            "complexity_score": 0.19424999999999998,
+            "features": {
+              "length": 0.595,
+              "ambiguity": 0.0,
+              "mixed_language": 0.0,
+              "technical_terms": 0.2,
+              "sentiment_clarity": 0.5,
+              "reasoning_complexity": 0.0
+            },
+            "detected_patterns": []
+          },
+          "output": "{\"sentiment\":\"negative\",\"product\":\"smartwatch\",\"issue\":\"short battery life and slow charging\"}",
+          "parsed": {
+            "sentiment": "negative",
+            "product": "smartwatch",
+            "issue": "short battery life and slow charging"
+          },
+          "score": 1,
+          "error": null,
+          "estimated_tokens": 120
+        }
+      ]
+    }
+  },
+  "summary": {
+    "best_accuracy": "Rules-based",
+    "best_efficiency": "Rules-based",
+    "most_economical": "Rules-based"
+  }
+}

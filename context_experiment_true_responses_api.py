@@ -106,7 +106,7 @@ Output:"""
 # Responses API Calling Function
 # ============================================================================
 
-def call_responses_api(input_text, model="gpt-4o"):
+def call_responses_api(input_text, model="gpt-5"):
     """
     使用真正的 Responses API
     

@@ -1,0 +1,208 @@
+{
+  "timestamp": "20251017_142033",
+  "experiment_type": "Smart Context Selection",
+  "api_version": "TRUE Responses API with AI Strategy Prediction",
+  "results": {
+    "total_score": 7,
+    "max_score": 7,
+    "success_rate": 1.0,
+    "strategy_counts": {
+      "rules_based": 6,
+      "few_shot": 1
+    },
+    "tokens_saved": 768,
+    "results": [
+      {
+        "test_id": 1,
+        "input": "這支耳機音質不錯，但藍牙常常斷線。",
+        "prediction": {
+          "strategy": "rules_based",
+          "reason": "複雜度分數 0.15 <= 門檻 0.4",
+          "confidence": 0.853,
+          "complexity_score": 0.147,
+          "features": {
+            "length": 0.085,
+            "ambiguity": 0.3333333333333333,
+            "mixed_language": 0.0,
+            "technical_terms": 0.2,
+            "sentiment_clarity": 0.0
+          },
+          "difficult_patterns": []
+        },
+        "output": "{\"sentiment\":\"negative\",\"product\":\"headphones\",\"issue\":\"bluetooth frequently disconnects\"}",
+        "parsed": {
+          "sentiment": "negative",
+          "product": "headphones",
+          "issue": "bluetooth frequently disconnects"
+        },
+        "score": 1,
+        "error": null,
+        "tokens_saved": 128
+      },
+      {
+        "test_id": 2,
+        "input": "The keyboard feels great, but the battery dies too fast.",
+        "prediction": {
+          "strategy": "rules_based",
+          "reason": "複雜度分數 0.16 <= 門檻 0.4",
+          "confidence": 0.839,
+          "complexity_score": 0.161,
+          "features": {
+            "length": 0.28,
+            "ambiguity": 0.0,
+            "mixed_language": 0.0,
+            "technical_terms": 0.2,
+            "sentiment_clarity": 0.5
+          },
+          "difficult_patterns": []
+        },
+        "output": "{\"sentiment\":\"negative\",\"product\":\"keyboard\",\"issue\":\"battery dies too fast\"}",
+        "parsed": {
+          "sentiment": "negative",
+          "product": "keyboard",
+          "issue": "battery dies too fast"
+        },
+        "score": 1,
+        "error": null,
+        "tokens_saved": 128
+      },
+      {
+        "test_id": 3,
+        "input": "相機畫質很棒，可是夜拍對焦很慢。",
+        "prediction": {
+          "strategy": "rules_based",
+          "reason": "複雜度分數 0.09 <= 門檻 0.4",
+          "confidence": 0.909,
+          "complexity_score": 0.091,
+          "features": {
+            "length": 0.08,
+            "ambiguity": 0.0,
+            "mixed_language": 0.0,
+            "technical_terms": 0.0,
+            "sentiment_clarity": 0.5
+          },
+          "difficult_patterns": []
+        },
+        "output": "{\"sentiment\":\"negative\",\"product\":\"camera\",\"issue\":\"slow autofocus at night\"}",
+        "parsed": {
+          "sentiment": "negative",
+          "product": "camera",
+          "issue": "slow autofocus at night"
+        },
+        "score": 1,
+        "error": null,
+        "tokens_saved": 128
+      },
+      {
+        "test_id": 4,
+        "input": "我最近買了這款無線耳機，整體來說音質表現相當出色，低音渾厚、高音清晰。不過使用了兩個禮拜後發現，藍牙連線經常會突然斷掉，尤其是在人多的地方更明顯，需要重新配對才能使用，這點真的很困擾。",
+        "prediction": {
+          "strategy": "few_shot",
+          "reason": "檢測到困難模式: 整體.*(?:不過|但是|可是)",
+          "confidence": 0.8,
+          "complexity_score": 0.167,
+          "features": {
+            "length": 0.46,
+            "ambiguity": 0.0,
+            "mixed_language": 0.0,
+            "technical_terms": 0.0,
+            "sentiment_clarity": 0.5
+          },
+          "difficult_patterns": [
+            "整體.*(?:不過|但是|可是)"
+          ]
+        },
+        "output": "{\"sentiment\": \"negative\", \"product\": \"wireless earbuds\", \"issue\": \"frequent Bluetooth disconnections requiring re-pairing, especially in crowded areas\"}",
+        "parsed": {
+          "sentiment": "negative",
+          "product": "wireless earbuds",
+          "issue": "frequent Bluetooth disconnections requiring re-pairing, especially in crowded areas"
+        },
+        "score": 1,
+        "error": null,
+        "tokens_saved": 0
+      },
+      {
+        "test_id": 5,
+        "input": "The mechanical keyboard I purchased has excellent build quality with a satisfying tactile feedback that makes typing a pleasure. However, I'm quite disappointed with the battery life - it only lasts about 3-4 days with the RGB lighting on, which is far shorter than the advertised 2 weeks. I find myself charging it constantly.",
+        "prediction": {
+          "strategy": "rules_based",
+          "reason": "複雜度分數 0.23 <= 門檻 0.4",
+          "confidence": 0.77,
+          "complexity_score": 0.23,
+          "features": {
+            "length": 1.0,
+            "ambiguity": 0.0,
+            "mixed_language": 0.0,
+            "technical_terms": 0.2,
+            "sentiment_clarity": 0.0
+          },
+          "difficult_patterns": []
+        },
+        "output": "{\"sentiment\":\"negative\",\"product\":\"mechanical keyboard\",\"issue\":\"battery life much shorter than advertised (3-4 days with rgb on vs 2 weeks), requiring frequent charging\"}",
+        "parsed": {
+          "sentiment": "negative",
+          "product": "mechanical keyboard",
+          "issue": "battery life much shorter than advertised (3-4 days with rgb on vs 2 weeks), requiring frequent charging"
+        },
+        "score": 1,
+        "error": null,
+        "tokens_saved": 128
+      },
+      {
+        "test_id": 6,
+        "input": "這台相機的畫質真的沒話說，日拍的照片色彩鮮豔、細節豐富，完全達到專業水準。但是一到晚上或光線不足的環境，對焦速度就變得超級慢，常常要對好幾次才能成功，拍夜景或室內照片時很不方便，希望未來韌體更新能改善這個問題。",
+        "prediction": {
+          "strategy": "rules_based",
+          "reason": "複雜度分數 0.21 <= 門檻 0.4",
+          "confidence": 0.79,
+          "complexity_score": 0.21000000000000002,
+          "features": {
+            "length": 0.525,
+            "ambiguity": 0.0,
+            "mixed_language": 0.0,
+            "technical_terms": 0.2,
+            "sentiment_clarity": 0.5
+          },
+          "difficult_patterns": []
+        },
+        "output": "{\"sentiment\":\"negative\",\"product\":\"camera\",\"issue\":\"autofocus becomes very slow in low light or at night, often requiring multiple attempts\"}",
+        "parsed": {
+          "sentiment": "negative",
+          "product": "camera",
+          "issue": "autofocus becomes very slow in low light or at night, often requiring multiple attempts"
+        },
+        "score": 1,
+        "error": null,
+        "tokens_saved": 128
+      },
+      {
+        "test_id": 7,
+        "input": "這款智慧手錶的螢幕顯示效果很棒，在陽光下也能清楚看見，而且運動追蹤功能很準確。可是續航力真的讓人失望，官方說可以用5天，但實際上開啟所有功能後，大概2天就要充電了。另外充電速度也很慢，要充滿電需要將近3小時，對於經常外出的人來說很不方便。",
+        "prediction": {
+          "strategy": "rules_based",
+          "reason": "複雜度分數 0.22 <= 門檻 0.4",
+          "confidence": 0.776,
+          "complexity_score": 0.22399999999999998,
+          "features": {
+            "length": 0.595,
+            "ambiguity": 0.0,
+            "mixed_language": 0.0,
+            "technical_terms": 0.2,
+            "sentiment_clarity": 0.5
+          },
+          "difficult_patterns": []
+        },
+        "output": "{\"sentiment\":\"negative\",\"product\":\"smartwatch\",\"issue\":\"battery life much shorter than advertised when all features enabled and charging is very slow, taking nearly 3 hours\"}",
+        "parsed": {
+          "sentiment": "negative",
+          "product": "smartwatch",
+          "issue": "battery life much shorter than advertised when all features enabled and charging is very slow, taking nearly 3 hours"
+        },
+        "score": 1,
+        "error": null,
+        "tokens_saved": 128
+      }
+    ]
+  }
+}
